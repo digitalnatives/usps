@@ -4,6 +4,8 @@
 module USPS::Response
   class AddressStandardization < Base
     def initialize(addresses, xml)
+      self.raw = xml.to_s
+
       @addresses = {}
 
       [addresses].flatten.each_with_index do |addy, i|
